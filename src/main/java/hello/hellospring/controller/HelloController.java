@@ -15,12 +15,14 @@ public class HelloController {
         return "hello";
     }
 
+    //MVC
     @GetMapping("hello-mvc")
     public String helloMVC(@RequestParam("name") String name,Model model){
         model.addAttribute("name",name);
-        return "hello-template";
+        return "hel lo-template";
     }
 
+    //API
    @GetMapping("hello-string")
    @ResponseBody
     public String helloString(@RequestParam("name")String name){
