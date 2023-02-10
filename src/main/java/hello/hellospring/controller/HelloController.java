@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloController {
 
+    //정적 컨텐츠
     @GetMapping("hello")
     public String hello(Model model){
-        model.addAttribute("data","spring!!");
+        model.addAttribute("data","hello!!");
         return "hello";
     }
 
@@ -19,7 +20,7 @@ public class HelloController {
     @GetMapping("hello-mvc")
     public String helloMVC(@RequestParam("name") String name,Model model){
         model.addAttribute("name",name);
-        return "hel lo-template";
+        return "hello-template";
     }
 
     //API
@@ -29,6 +30,7 @@ public class HelloController {
         return "hello " + name; //"hello spring"
    }
 
+    //자주 사용되는 API 방식
    @GetMapping("hello-api")
    @ResponseBody
     public Hello helloApi(@RequestParam("name") String name){
